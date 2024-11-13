@@ -77,13 +77,31 @@ public class ComercioTres {
             }
         }
         
-       if (porcentajeSeguro <= 1 && porcentajeSeguro >= 15){
-            adicionalSeguro = (sueldoBasico * porcentajeSeguro)/100;
-       } else {
-           porcentajeSeguro = 10;
-           adicionalSeguro = (sueldoBasico * porcentajeSeguro)/100;
-       }
        
+        if (porcentajeSeguro >= 1 && porcentajeSeguro <= 15) {
+            porcentajeSeguro = porcentajeSeguro + 0;
+        } else {
+            porcentajeSeguro = 10;
+        } // Esta solucion funciona gracias a que cumple con los requisitos del problema. 
+
+        // opción 2
+        if (porcentajeSeguro > 15) {
+            porcentajeSeguro = 10;
+        } // Esta solucion funciona pero no cumple con lo que pide el problema pues acepta datos mayores a 15.
+
+         // opción 3
+        if (porcentajeSeguro < 1 || porcentajeSeguro > 15) {
+            porcentajeSeguro = 10;
+        } // Esta solucion no funciona porque no cumple con los 
+        //requisitos del problema y el uso de 'or'permite que se cumpla la 
+        //condicion aunque una de las variables sea falsa.
+
+        // opción 4
+        if (porcentajeSeguro < 1 && porcentajeSeguro > 15) {
+            porcentajeSeguro = 10;
+        } // Esta solucion no funciona porque acepta valores menores a 1 y mayores a 15.
+        
+        adicionalSeguro = (sueldoBasico * porcentajeSeguro)/100;
         sueldoFinal = adicionalSeguro + bono + sueldoBasico;
         
         System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"

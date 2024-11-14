@@ -31,7 +31,7 @@ public class Ejemplo021 {
         int yearNacimiento = entrada.nextInt();
         
         String mesCadena = "";
-
+  
         switch (mesNacimiento) {
             case 1:
                 mesCadena = "enero";
@@ -86,6 +86,7 @@ public class Ejemplo021 {
                 break;
         }
         
+        mesCadena = mesCadena.toUpperCase();
         System.out.printf("Usted ha nacido el %s de %s de %s\n ", diaNacimiento,
                         mesCadena, yearNacimiento);
 

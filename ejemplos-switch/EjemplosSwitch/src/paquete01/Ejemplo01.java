@@ -4,6 +4,7 @@
  */
 package paquete01;
 
+import static java.lang.Character.toUpperCase;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -22,17 +23,20 @@ public class Ejemplo01 {
         entrada.useLocale(Locale.US);
         System.out.println("Ingrese el nombre del día de la semana");
         String cadena = entrada.nextLine();
+        cadena = cadena.toUpperCase();
         
         switch(cadena){
-            case "Lunes":
-                System.out.printf("%s", cadena);
+            case "lunes":
+            
+                System.out.printf("%s", cadena.toUpperCase());
                 break;
             
             case "Martes":
             case "martes":
+            case "MARTES":
                 System.out.printf("%s", cadena);
                 break;
-            
+     
             case "Viernes":
             case "VIERNES":
             case "viernes":
@@ -40,6 +44,8 @@ public class Ejemplo01 {
                 break;
             
             case "Domingo":
+            case "domingo":
+            case "DOMINGO":
                 System.out.printf("%s, es el séptimo día "
                         + "de la semana", cadena);
                 break;
